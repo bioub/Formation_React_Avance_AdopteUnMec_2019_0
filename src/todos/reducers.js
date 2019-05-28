@@ -13,8 +13,10 @@ interface Todo {
   completed?: boolean;
 }
 
-
-function inputReducer(previousState: string = '', { type, payload }: FSAAction<string>) {
+function inputReducer(
+  previousState: string = '',
+  { type, payload }: FSAAction<string>,
+) {
   switch (type) {
     case TODO_CHANGE:
       return payload;
@@ -27,7 +29,10 @@ function inputReducer(previousState: string = '', { type, payload }: FSAAction<s
 // - predictive
 // - pas de side effect (pas de nouveau traitement storage/ajax...)
 // - pas modifier les paramètres d'entrée
-function itemsReducer(previousState: Todo[] = [], { type, payload }: FSAAction<Todo>): Todo[] {
+function itemsReducer(
+  previousState: Todo[] = [],
+  { type, payload }: FSAAction<Todo>,
+): Todo[] {
   switch (type) {
     case TODO_ADD:
       return [...previousState, payload];
@@ -37,7 +42,7 @@ function itemsReducer(previousState: Todo[] = [], { type, payload }: FSAAction<T
       //   ...previousState.slice(0, i),
       //   ...previousState.slice(i + 1),
       // ];
-      return previousState.filter((elt) => elt.id !== payload.id);
+      return previousState.filter(elt => elt.id !== payload.id);
     default:
       return previousState;
   }

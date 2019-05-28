@@ -43,11 +43,15 @@ describe('itemsReducer', () => {
     };
     const nextState = itemsReducer(previousState, action);
 
-    expect(nextState).toEqual([{ id: 123, text: 'Acheter du pain', completed: false }]);
+    expect(nextState).toEqual([
+      { id: 123, text: 'Acheter du pain', completed: false },
+    ]);
     expect(nextState).not.toBe(previousState);
   });
   test('itemsReducer nextState', () => {
-    const previousState = [{ id: 123, text: 'Acheter du pain', completed: false }];
+    const previousState = [
+      { id: 123, text: 'Acheter du pain', completed: false },
+    ];
     const action = {
       type: 'TODO_DELETE',
       payload: { id: 123, text: 'Acheter du pain', completed: false },

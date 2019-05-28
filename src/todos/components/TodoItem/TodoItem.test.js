@@ -24,7 +24,6 @@ it('should contains span with todo.text', () => {
   expect(wrapper.find('span').text()).toBe('Acheter du pain');
 });
 
-
 it('should call onDeleteItem on click', () => {
   const todo = {
     id: 123,

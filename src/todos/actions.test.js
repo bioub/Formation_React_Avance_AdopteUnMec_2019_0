@@ -4,7 +4,6 @@ import { randomInt } from '../utils/random';
 jest.mock('../utils/random');
 
 describe('todos action creators', () => {
-
   it('todoChange actionCreator', () => {
     const action = todoChange('Acheter du pain');
     expect(action).toEqual({
@@ -14,7 +13,6 @@ describe('todos action creators', () => {
   });
 
   describe('todoAdd actionCreator', () => {
-
     beforeEach(() => {
       randomInt.mockClear();
       randomInt.mockReturnValue(42);
@@ -28,12 +26,11 @@ describe('todos action creators', () => {
           id: 42,
           text: 'Acheter du pain',
           completed: false,
-        }
+        },
       });
       expect(randomInt).toHaveBeenCalledTimes(1);
     });
-
-  })
+  });
 
   it('todoDelete actionCreator', () => {
     const action = todoDelete({
@@ -50,4 +47,4 @@ describe('todos action creators', () => {
       },
     });
   });
-})
+});
