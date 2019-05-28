@@ -1,4 +1,4 @@
-import { todoChange, todoAdd } from './actions';
+import { todoChange, todoAdd, todoDelete } from './actions';
 import { randomInt } from '../utils/random';
 
 jest.mock('../utils/random');
@@ -34,4 +34,20 @@ describe('todos action creators', () => {
     });
 
   })
+
+  it('todoDelete actionCreator', () => {
+    const action = todoDelete({
+      id: 123,
+      text: 'Acheter du pain',
+      completed: false,
+    });
+    expect(action).toEqual({
+      type: 'TODO_DELETE',
+      payload: {
+        id: 123,
+        text: 'Acheter du pain',
+        completed: false,
+      },
+    });
+  });
 })
