@@ -1,8 +1,11 @@
+import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import { TodoList } from '../components/TodoList/TodoList';
 import { selectTodosItems, selectTodosCount } from '../selectors';
+import { todoDelete } from '../actions';
 
 function mapStateToProps(state) {
+  console.log('mapStateToProps TodoListContainer');
   return {
     items: selectTodosItems(state),
     count: selectTodosCount(state),
@@ -15,4 +18,16 @@ function mapStateToProps(state) {
 // modifier itemsReducer pour retourner un nouveau tableau sans
 // l'item passé en payload (Array.prototype.filter)
 
-export const TodoListContainer = connect(mapStateToProps)(TodoList);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(
+    {
+      onDeleteItem: todoDelete,
+    },
+    dispatch,
+  );
+}
+
+export const TodoListContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(TodoList);

@@ -1,12 +1,13 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import { TodoItem } from '../TodoItem/TodoItem';
 import { TodoCount } from '../TodoCount/TodoCount';
 
-export class TodoList extends PureComponent {
+export class TodoList extends Component {
   // shouldComponentUpdate(nextProps) {
   //   return this.props.items !== nextProps.items;
   // }
   render() {
+    console.log('render TodoList');
     const { count, items = [], onDeleteItem } = this.props;
     return (
       <>
