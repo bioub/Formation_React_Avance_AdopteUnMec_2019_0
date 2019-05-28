@@ -1,8 +1,5 @@
 import { TODO_CHANGE, TODO_ADD, TODO_DELETE } from './constants';
-
-function randomInt() {
-  return Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);
-}
+import { randomInt } from '../utils/random';
 
 function todoChange(payload) {
   return { type: TODO_CHANGE, payload };
