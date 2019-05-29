@@ -4,12 +4,13 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Link } from 'react-router-dom';
-import { userFetchRequested } from '../../actions';
+// import { userFetchRequested } from '../../actions';
 
 export class UsersList extends Component {
   componentDidMount() {
     // redux-thunk / redux-saga / redux-promise / redux-observable
-    this.props.dispatch(userFetchRequested());
+    // this.props.dispatch(userFetchRequested());
+    this.props.userFetchRequested();
   }
   render() {
     const { match, users = [], loading } = this.props;

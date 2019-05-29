@@ -9,7 +9,13 @@ test('userFetchRequested action creator', async () => {
 
   const dispatch = jest.fn();
   const thunk = userFetchRequested();
-  await thunk(dispatch);
+  const state = {
+    users: {
+      items: []
+    }
+  };
+  const getState = () => state;
+  await thunk(dispatch, getState);
 
   expect(dispatch).toHaveBeenNthCalledWith(1, { type: 'USER_FETCH' });
   expect(dispatch).toHaveBeenNthCalledWith(2, {

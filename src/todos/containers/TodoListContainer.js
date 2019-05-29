@@ -5,7 +5,6 @@ import { selectTodosItems, selectTodosCount } from '../selectors';
 import { todoDelete } from '../actions';
 
 function mapStateToProps(state) {
-  console.log('mapStateToProps TodoListContainer');
   return {
     items: selectTodosItems(state),
     count: selectTodosCount(state),

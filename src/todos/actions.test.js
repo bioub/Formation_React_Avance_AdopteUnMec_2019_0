@@ -18,7 +18,7 @@ describe('todos action creators', () => {
       randomInt.mockReturnValue(42);
     });
 
-    it('todoChange actionCreator', () => {
+    it('todoAdd actionCreator', () => {
       const action = todoAdd('Acheter du pain');
       expect(action).toEqual({
         type: 'TODO_ADD',

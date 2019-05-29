@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TodoItem } from '../TodoItem/TodoItem';
+import { HideableTodoItem as TodoItem } from '../TodoItem/TodoItem';
 import { TodoCount } from '../TodoCount/TodoCount';
 
 export class TodoList extends Component {
@@ -7,13 +7,12 @@ export class TodoList extends Component {
   //   return this.props.items !== nextProps.items;
   // }
   render() {
-    console.log('render TodoList');
     const { count, items = [], onDeleteItem } = this.props;
     return (
       <>
         <div className="TodoList">
           {items.map(it => (
-            <TodoItem key={it.id} item={it} onDeleteItem={onDeleteItem} />
+            <TodoItem key={it.id} item={it} onDeleteItem={onDeleteItem} show={true} />
           ))}
         </div>
         <TodoCount count={count} />

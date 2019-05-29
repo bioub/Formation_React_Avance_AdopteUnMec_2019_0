@@ -1,10 +1,18 @@
 import { USER_FETCH, USER_FETCH_SUCCESS } from './constants';
 import { getAll } from './api/users';
+import { selectUsersItems } from './selectors';
 
 export function userFetchRequested() {
-  return async function(dispatch) {
+  return async function(dispatch, getState) {
+    // CACHE
+    let users = selectUsersItems(getState());
+
+    if (users.length) {
+      return;
+    }
+
     dispatch(userFetch());
-    const users = await getAll();
+    users = await getAll();
     dispatch(userFetchSuccess(users));
   };
 }

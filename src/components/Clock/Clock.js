@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { hideable } from '../../hoc/hideable';
 
 class Clock extends Component {
   constructor() {
@@ -30,4 +31,6 @@ class Clock extends Component {
   }
 }
 
-export { Clock };
+const HideableClock = hideable(Clock);
+
+export { Clock, HideableClock };

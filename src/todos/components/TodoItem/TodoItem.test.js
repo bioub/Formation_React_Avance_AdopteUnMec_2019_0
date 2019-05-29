@@ -35,5 +35,6 @@ it('should call onDeleteItem on click', () => {
 
   wrapper.find('button').simulate('click');
 
+  expect(mock).toBeCalledTimes(1);
   expect(mock).toHaveBeenNthCalledWith(1, todo);
 });

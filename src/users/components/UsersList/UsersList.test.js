@@ -12,7 +12,7 @@ beforeEach(() => {
 
 it('should render', () => {
   const cb = jest.fn();
-  const wrapper = shallow(<UsersList dispatch={cb} />);
+  const wrapper = shallow(<UsersList userFetchRequested={cb} />);
 
-  expect(cb).toHaveBeenNthCalledWith(1, { type: 'USER_FETCH_REQUESTED' });
+  expect(cb).toHaveBeenCalledTimes(1);
 });

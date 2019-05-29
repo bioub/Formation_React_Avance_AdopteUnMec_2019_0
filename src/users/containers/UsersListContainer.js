@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import { UsersList } from '../components/UsersList/UsersList';
 import { selectUsersItems, selectUsersLoading } from '../selectors';
+import { bindActionCreators } from 'redux';
+import { userFetchRequested } from '../actions';
 
 function mapStateToProps(state) {
   return {
@@ -9,4 +11,8 @@ function mapStateToProps(state) {
   };
 }
 
-export const UserListContainer = connect(mapStateToProps)(UsersList);
+const mapDispatchToProps = (dispatch) => bindActionCreators({
+  userFetchRequested,
+}, dispatch);
+
+export const UserListContainer = connect(mapStateToProps, mapDispatchToProps)(UsersList);

@@ -7,6 +7,6 @@ exports[`shallow renders without crashing 1`] = `
   <Memo(ConnectFunction) />
   <Memo(ConnectFunction) />
   <hr />
-  <Clock />
+  <Hideable(Clock) />
 </div>
 `;

@@ -1,6 +1,7 @@
 import React from 'react';
 import css from './TodoItem.module.scss';
 import { shape, string, number, bool } from 'prop-types';
+import { hideable } from '../../../hoc/hideable';
 
 export function TodoItem({ item, onDeleteItem = () => {} }) {
   return (
@@ -18,3 +19,5 @@ TodoItem.propTypes = {
     completed: bool,
   }),
 };
+
+export const HideableTodoItem = hideable(TodoItem);
