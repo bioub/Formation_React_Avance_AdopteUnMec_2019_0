@@ -12,13 +12,17 @@ export function UsersShow({ user, loading }) {
           <p>{user.phone}</p>
           <h3>Email</h3>
           <p>{user.email}</p>
-          <h3>Address</h3>
-          <p>
-            {user.address.street}
-            <br />
-            {user.address.city}
-            {user.address.zipcode}
-          </p>
+          {user.address && (
+            <>
+              <h3>Address</h3>
+              <p>
+                {user.address.street}
+                <br />
+                {user.address.city}
+                {user.address.zipcode}
+              </p>
+            </>
+          )}
         </>
       )}
     </div>

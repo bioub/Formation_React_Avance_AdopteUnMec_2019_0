@@ -1,12 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import { Route, Switch, Link } from 'react-router-dom';
-import { UsersAdd } from '../UsersAdd/UsersAdd';
 import { UserListContainer } from '../../containers/UsersListContainer';
 import { UsersShowContainer } from '../../containers/UsersShowContainer';
 
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import { UsersAddContainer } from '../../containers/UsersAddContainer';
 
 export function Users({ match }) {
   return (
@@ -25,7 +25,7 @@ export function Users({ match }) {
         </Grid>
         <Grid item xs={12} sm={8}>
           <Switch>
-            <Route path={match.path + '/add'} component={UsersAdd} />
+            <Route path={match.path + '/add'} component={UsersAddContainer} />
             <Route path={match.path + '/:id'} component={UsersShowContainer} />
           </Switch>
         </Grid>

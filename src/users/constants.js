@@ -1,2 +1,4 @@
 export const USER_FETCH = 'USER_FETCH';
 export const USER_FETCH_SUCCESS = 'USER_FETCH_SUCCESS';
+export const USER_CREATE = 'USER_CREATE';
+export const USER_CREATE_SUCCESS = 'USER_CREATE_SUCCESS';
